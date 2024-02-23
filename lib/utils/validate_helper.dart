@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 class Validate{
 
   static  bool isEmail(String em) {
@@ -10,5 +12,13 @@ class Validate{
     if (phoneNo == null) return false;
     final regExp = RegExp(r'(^(?:[+0]9)?[0-9]{10,12}$)');
     return regExp.hasMatch(phoneNo);
+  }
+
+  static String convertTextToCurrency( String text) {
+    String result = "";
+    double numericValue = double.parse(text);
+    NumberFormat currencyFormat = NumberFormat.currency(locale: 'vi_VN', symbol: 'Đ');
+    result = currencyFormat.format(numericValue);
+    return result ;
   }
 }

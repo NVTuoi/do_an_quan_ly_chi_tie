@@ -62,40 +62,19 @@ class _StatisticalDayScreenState extends State<StatisticalDayScreen> {
                       style: AppThemes.commonText.copyWith(
                         color: AppColors.appColor,
                       ))
-                  : Text('Hôm nay chi tiêu nhiều hơn hôm qua',
-                      style: AppThemes.commonText.copyWith(color: Colors.red)),
+                  : Text(
+                      'Hôm nay chi tiêu nhiều hơn hôm qua',
+                      style: AppThemes.commonText.copyWith(
+                        color: Colors.red,
+                      ),
+                    ),
+              const SizedBox(
+                height: 8,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text('Tổng quan', style: AppThemes.commonText),
-                  // DropdownButtonHideUnderline(
-                  //   child: DropdownButton(
-                  //     style: AppThemes.commonText.copyWith(color: Colors.black),
-                  //     value: dropDownValueOverview,
-                  //     icon: const Icon(Icons.keyboard_arrow_down),
-                  //     items: items.map((String items) {
-                  //       return DropdownMenuItem(
-                  //         value: items,
-                  //         child: Text(items),
-                  //       );
-                  //     }).toList(),
-                  //     onChanged: (String? newValue) {
-                  //       setState(
-                  //         () {
-                  //           dropDownValueOverview = newValue!;
-                  //           if (dropDownValueOverview.compareTo(items[0]) ==
-                  //               0) {
-                  //             overview = true;
-                  //           }
-                  //           if (dropDownValueOverview.compareTo(items[1]) ==
-                  //               0) {
-                  //             overview = false;
-                  //           }
-                  //         },
-                  //       );
-                  //     },
-                  //   ),
-                  // ),
                 ],
               ),
               (overview == true
@@ -149,32 +128,6 @@ class _StatisticalDayScreenState extends State<StatisticalDayScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text('Tình hình ', style: AppThemes.commonText),
-                  /*DropdownButtonHideUnderline(
-                    child: DropdownButton(
-                      style: AppThemes.commonText.copyWith(color: Colors.black),
-                      value: dropDownValueSpend,
-                      icon: const Icon(Icons.keyboard_arrow_down),
-                      items: items.map((String items) {
-                        return DropdownMenuItem(
-                          value: items,
-                          child: Text(items),
-                        );
-                      }).toList(),
-                      onChanged: (String? newValue) {
-                        setState(
-                          () {
-                            dropDownValueSpend = newValue!;
-                            if (dropDownValueSpend.compareTo(items[0]) == 0) {
-                              spend = true;
-                            }
-                            if (dropDownValueSpend.compareTo(items[1]) == 0) {
-                              spend = false;
-                            }
-                          },
-                        );
-                      },
-                    ),
-                  ),*/
                 ],
               ),
               Row(

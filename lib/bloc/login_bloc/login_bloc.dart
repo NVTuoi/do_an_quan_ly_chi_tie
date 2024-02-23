@@ -17,6 +17,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     yield LoginLoadingState();
     try {
       await loginRepository.loginWithEmail(email: event.email,password: event.password);
+      print("---LoginSuccessState---");
       yield LoginSuccessState();
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {

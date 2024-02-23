@@ -10,6 +10,7 @@ class CategorySpendBloc extends Bloc<CategorySpendEvent, CategorySpendState> {
   CategorySpendBloc({required this.categorySpendRepository})
       : super(SpendInitialState());
   @override
+  // su kien
   Stream<CategorySpendState> mapEventToState(CategorySpendEvent event) async* {
     if (event is CreateCategorySpendEvent) {
       yield* _mapCreateCategorySpendToState(event);

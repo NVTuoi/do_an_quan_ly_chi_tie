@@ -58,7 +58,7 @@ class _StatisticalScreenState extends State<StatisticalScreen> {
               return Padding(
                 padding: const EdgeInsets.only(top: 20),
                 child: DefaultTabController(
-                  length: 4,
+                  length: 3,
                   child: Column(
                     children: [
                       TabBar(
@@ -75,10 +75,10 @@ class _StatisticalScreenState extends State<StatisticalScreen> {
                             'Năm này',
                             style: AppThemes.commonText,
                           ),
-                          Text(
-                            'Tùy chọn',
-                            style: AppThemes.commonText,
-                          )
+                          // Text(
+                          //   'Tùy chọn',
+                          //   style: AppThemes.commonText,
+                          // )
                         ],
                         indicatorWeight: 1,
                         indicatorColor: AppColors.appColor,
@@ -91,7 +91,7 @@ class _StatisticalScreenState extends State<StatisticalScreen> {
                             StatisticalDayScreen(getStatistical: getStatistical,),
                             StatisticalMothScreen(getStatistical: getStatistical,),
                             StatisticalYearScreen(getStatistical: getStatistical,),
-                            StatisticalOptionScreen(),
+
                           ],
                         ),
                       )

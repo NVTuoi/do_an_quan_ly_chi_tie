@@ -51,8 +51,9 @@ class _LoginScreenState extends State<LoginScreen> {
               LoadingHelper.showLoading(context);
             } else if (state is LoginSuccessState) {
               LoadingHelper.hideLoading(context);
-              Navigator.pushNamed(context, Constants.homeScreen,
-                  arguments: _emailController.text);
+
+              Navigator.pushNamed(context, Constants.homeScreen, arguments: _emailController.text);
+
             } else if (state is LoginErrorState) {
               LoadingHelper.hideLoading(context);
               FunctionHelper.showSnackBar(context: context, title: state.error);
@@ -186,7 +187,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: double.infinity,
                     height: 50,
                     child: CupertinoButton(
-                      child: const Text(
+                      child:  const Text(
                         "Đăng nhập",
                         style: TextStyle(
                           color: Colors.white,

@@ -27,16 +27,15 @@ class UserService {
   Future<List<GetUser>> getUsers() async {
     List<GetUser> getUsers = [];
     var idUser = await SecureStorage().getString(key: SecureStorage.userId);
-    CollectionReference usersCollection =
-        FirebaseFirestore.instance.collection(CollectionName.users.name);
-    CollectionReference sumSpendAllCollection =
-        FirebaseFirestore.instance.collection(CollectionName.costSpend.name);
-    CollectionReference sumCollectAllCollection =
-        FirebaseFirestore.instance.collection(CollectionName.costCollect.name);
-    CollectionReference categorySpendCollectionReference = FirebaseFirestore
-        .instance
-        .collection(CollectionName.categorySpend.name);
-
+    print("--11---");
+    CollectionReference usersCollection = FirebaseFirestore.instance.collection(CollectionName.users.name);
+    print("--22---");
+    CollectionReference sumSpendAllCollection = FirebaseFirestore.instance.collection(CollectionName.costSpend.name);
+    print("--33---");
+    CollectionReference sumCollectAllCollection = FirebaseFirestore.instance.collection(CollectionName.costCollect.name);
+    print("--44---");
+    CollectionReference categorySpendCollectionReference = FirebaseFirestore.instance.collection(CollectionName.categorySpend.name);
+    print("--55---");
     //thông tin user
     Users? users;
     var data = await usersCollection.get();
@@ -51,7 +50,7 @@ class UserService {
     var dataSumCollectAll = await sumCollectAllCollection.get();
     for (var item in dataSumCollectAll.docs) {
       var e = CostCollect.formJson(item.data() as Map<String, dynamic>)
-        ..id = item.id;
+        ..id  = item.id;
       if (e.idUser == idUser) {
         sumCollectdAll = sumCollectdAll + e.money;
       }

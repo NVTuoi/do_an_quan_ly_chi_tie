@@ -10,6 +10,7 @@ import 'package:quan_ly_chi_tieu/configs/themes.dart';
 import 'package:quan_ly_chi_tieu/models/cost_spend.dart';
 import 'package:quan_ly_chi_tieu/utils/function_helper.dart';
 import 'package:quan_ly_chi_tieu/utils/loading_helper.dart';
+import 'package:quan_ly_chi_tieu/utils/validate_helper.dart';
 
 class CostSpendCard extends StatefulWidget {
   CostSpend costSpend;
@@ -85,7 +86,7 @@ class _CostSpendCardState extends State<CostSpendCard> {
               ),
               Container(
                 margin: const EdgeInsets.only(left: 5,right: 5),
-                width: 120,
+                width: 100,
                 child: Text(
                   widget.costSpend.nameCategorySpend,
                   style: AppThemes.lightText.copyWith(color: Colors.black),
@@ -94,9 +95,9 @@ class _CostSpendCardState extends State<CostSpendCard> {
                 ),
               ),
               Container(
-                width: 90,
+                width: 120,
                 child: Text(
-                  widget.costSpend.money.toString().split(' ')[0],
+                  Validate.convertTextToCurrency(widget.costSpend.money.toString().split(' ')[0]),
                   style: AppThemes.lightText.copyWith(color: Colors.black),
                   maxLines: 1,
                   overflow:TextOverflow.ellipsis,

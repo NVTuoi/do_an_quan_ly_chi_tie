@@ -24,6 +24,7 @@ class CategoryCollectBloc extends Bloc<CategoryCollectEvent, CategoryCollectStat
       yield* _mapDeleteCategoryCollectToState(event);
     }
   }
+  // anh xa cac sk
 
   Stream<CategoryCollectState> _mapCreateCategoryCollectToState(
       CreateCategoryCollectEvent event) async* {

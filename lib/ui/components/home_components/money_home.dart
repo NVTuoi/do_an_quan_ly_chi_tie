@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quan_ly_chi_tieu/configs/colors.dart';
 import 'package:quan_ly_chi_tieu/configs/constants.dart';
 import 'package:quan_ly_chi_tieu/configs/themes.dart';
+import 'package:quan_ly_chi_tieu/utils/validate_helper.dart';
 class MoneyHome extends StatelessWidget {
    int sumMoney;
    MoneyHome({Key? key,required this.sumMoney}) : super(key: key);
@@ -30,7 +31,7 @@ class MoneyHome extends StatelessWidget {
               ),
             ),
             Text(
-            sumMoney!=null? sumMoney.toString():'0',
+            sumMoney!=null? Validate.convertTextToCurrency(sumMoney.toString()):'0',
               style: AppThemes.moneyText,),
             InkWell(
               onTap: () async {

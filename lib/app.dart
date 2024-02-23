@@ -86,15 +86,7 @@ class _MyAppState extends State<MyApp> {
           child: MaterialApp(
             theme: ThemeData(primaryColor: AppColors.appColor),
             debugShowCheckedModeBanner: false,
-            home: AnimatedSplashScreen(
-              duration: 2000,
-              splash: const Text(
-                'Chào Mừng Quay Trở Lại',
-                style: TextStyle(fontSize: 35, color: AppColors.appColor),
-              ),
-              nextScreen: const LoginScreen(),
-              splashTransition: SplashTransition.slideTransition,
-            ),
+            home: const LoginScreen(),
             onGenerateRoute: onGenerateRoute,
           ),
         ),

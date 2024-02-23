@@ -43,7 +43,7 @@ class _TypeCollectCardState extends State<TypeCollectCard> {
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color:  const Color(0xFFFAF5F5),
+          color:   AppColors.spendCardColor,
           borderRadius: BorderRadius.circular(10),
         ),
         padding: const EdgeInsets.only(left: 16, top: 16, bottom: 16,right: 16),

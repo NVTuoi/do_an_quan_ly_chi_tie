@@ -44,6 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -64,8 +65,10 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             builder: (context, state) {
               if (state is GetUserLoadingState) {
+                print("---1---");
                 LoadingHelper.showLoading(context);
               } else if (state is GetUserLoadedState) {
+                print("----2----");
                 LoadingHelper.hideLoading(context);
                 getUser = state.getUser;
                 categorySpends = state.getUser.first.categorySpends!;
@@ -96,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             listener: (context, state) {
               if (state is GetUserErrorState) {
-                print('Xảy ra lỗi');
+                print("-----3----");
                 LoadingHelper.hideLoading(context);
                 FunctionHelper.showSnackBar(
                     context: context, title: state.error);

@@ -62,14 +62,14 @@ class _DrawerItemState extends State<DrawerItem> {
              Navigator.pushNamed(context, Constants.changePasswordScreen);
             },
           ),
-          const Divider(height: 5,), //here is a divider
-          ListTile(
-            leading: const Icon(Icons.settings),
-            title: const Text("Cài đặt"),
-            onTap: () {
-              Navigator.pushNamed(context, Constants.settingScreen);
-            },
-          ),
+          // const Divider(height: 5,), //here is a divider
+          // ListTile(
+          //   leading: const Icon(Icons.settings),
+          //   title: const Text("Cài đặt"),
+          //   onTap: () {
+          //     Navigator.pushNamed(context, Constants.settingScreen);
+          //   },
+          // ),
           ListTile(
             leading: const Icon(Icons.arrow_back),
             title: const Text("Đăng xuất"),

@@ -10,6 +10,7 @@ import 'package:quan_ly_chi_tieu/configs/themes.dart';
 import 'package:quan_ly_chi_tieu/models/cost_collect.dart';
 import 'package:quan_ly_chi_tieu/utils/function_helper.dart';
 import 'package:quan_ly_chi_tieu/utils/loading_helper.dart';
+import 'package:quan_ly_chi_tieu/utils/validate_helper.dart';
 
 class CostCollectCard extends StatefulWidget {
   CostCollect costCollect;
@@ -41,7 +42,7 @@ class _CostCollectCardState extends State<CostCollectCard> {
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color:  Color(0xFFFAF5F5),
+          color:  AppColors.spendCardColor,
           borderRadius: BorderRadius.circular(10),
         ),
         margin: const EdgeInsets.only(bottom: 10),
@@ -83,7 +84,7 @@ class _CostCollectCardState extends State<CostCollectCard> {
               ),
               Container(
                 margin: const EdgeInsets.only(left: 5, right: 5),
-                width: 120,
+                width: 100,
                 child: Text(
                   widget.costCollect.nameCategoryCollect,
                   style: AppThemes.lightText.copyWith(color: Colors.black),
@@ -92,9 +93,10 @@ class _CostCollectCardState extends State<CostCollectCard> {
                 ),
               ),
               Container(
-                width: 90,
+                margin: const EdgeInsets.only(left: 1, right: 5),
+                width: 120,
                 child: Text(
-                  widget.costCollect.money.toString().split(' ')[0],
+                 Validate.convertTextToCurrency( widget.costCollect.money.toString().split(' ')[0]),
                   style: AppThemes.lightText.copyWith(color: Colors.black),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
@@ -103,7 +105,7 @@ class _CostCollectCardState extends State<CostCollectCard> {
               Expanded(
                 child: Container(
 
-                  margin: const EdgeInsets.only(right: 5),
+                  margin: const EdgeInsets.only(right: 20),
                   child: Text(
                     widget.costCollect.dateTime.toString().split(' ')[0],
                     style: AppThemes.lightText.copyWith(color: Colors.black),

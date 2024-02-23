@@ -7,4 +7,5 @@ class AppColors {
   static const Color boxColor= Color(0xFFAAA1A1);
   static const Color iconHideColor = Color(0xFF818989);
   static const Color spendCardColor = Color(0xFFE4CBCB);
+  // static const Color spendCardColor = Color(0xFFE4CBCB);
 }

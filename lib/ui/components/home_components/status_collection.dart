@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:quan_ly_chi_tieu/configs/themes.dart';
 import 'package:quan_ly_chi_tieu/models/get_user.dart';
+import 'package:quan_ly_chi_tieu/utils/validate_helper.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:quan_ly_chi_tieu/utils/validate_helper.dart';
+
+import '../../../models/group_by.dart';
 
 class StatusCollection extends StatefulWidget {
   GetUser getUser;
@@ -14,6 +19,8 @@ class _StatusCollectionState extends State<StatusCollection> {
   late String dropDownValue;
   late int sumSpend;
   late int sumCollect;
+
+  get groupBySpend => null;
   @override
   void initState() {
     dropDownValue = items[0];
@@ -62,7 +69,7 @@ class _StatusCollectionState extends State<StatusCollection> {
                   }).toList(),
                   onChanged: (String? newValue) {
                     setState(
-                      () {
+                          () {
                         dropDownValue = newValue!;
                         if (dropDownValue.compareTo(items[0]) == 0) {
                           sumSpend = widget.getUser.sumAllSpend ?? 0;
@@ -168,7 +175,7 @@ class _StatusCollectionState extends State<StatusCollection> {
                               width: 20,
                             ),
                             Text(
-                              sumSpend.toString(),
+                             sumSpend.toString(),
                               style: AppThemes.commonText
                                   .copyWith(color: Colors.red),
                             ),

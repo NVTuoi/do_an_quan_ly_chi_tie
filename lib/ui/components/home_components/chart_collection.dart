@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:quan_ly_chi_tieu/models/group_by.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import '../../../configs/themes.dart';
+import 'package:quan_ly_chi_tieu/utils/validate_helper.dart';
 
 class ChartCollection extends StatefulWidget {
   List<GroupBy>? groupBySpendAll = [];
@@ -129,6 +130,7 @@ class _ChartCollectionState extends State<ChartCollection> {
                                 name: 'Số tiền',
                                 dataLabelSettings:
                                     const DataLabelSettings(isVisible: true),
+                                // explodeAll: true
                               )
                             ]),
                       ],
